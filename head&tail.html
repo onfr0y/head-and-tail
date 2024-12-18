@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Head & Tail</title>
+</head>
+<body>
+    <h1>Could you get head or tail?</h1>
+    <div id="result"></div>
+    <script>
+        let the_turn = parseInt(prompt('How many times do you want to play?'), 10);
+        let output = "";
+
+        for (var i = 0; i < the_turn; i++) {
+            var answer = prompt('Choose "head" or "tail":');
+            var rand_ans = "";
+
+           
+            let randomNumber = Math.floor(Math.random() * 10);
+
+            if (randomNumber <= 4) {
+                rand_ans = "head";
+            } else {
+                rand_ans = "tail";
+            }
+
+
+            if (answer.toLowerCase() === rand_ans) {
+                output += `Turn ${i + 1}:  You Win<br>`;
+            } else {
+                output += `Turn ${i + 1}:  You Lose<br>`;
+            }
+        }
+
+        document.getElementById('result').innerHTML = output;
+    </script>
+</body>
+</html>
